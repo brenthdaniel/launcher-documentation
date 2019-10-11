@@ -1,0 +1,143 @@
+[id='configuring-your-application-to-use-open-liberty_{context}']
+= Configuring your application to use {OpenLiberty}
+
+Reference the {OpenLiberty} BOM (Bill of Materials) artifact in the `pom.xml` file at the root directory of your application.
+
+.Prerequisites
+
+* A Maven-based application
+
+.Procedure
+
+. Open the `pom.xml` file, add the `io.openliberty.features:features-bom` artifact to the `<dependencyManagement>` section, and specify the `<type>pom</type>` and `<scope>import</scope>`:
++
+--
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project>
+  ...
+  <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.openliberty.features</groupId>
+                <artifactId>features-bom</artifactId>
+                <version>${version.openliberty}</version>              
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+  </dependencyManagement>
+  ...
+</project>
+----
+--
+
+. Include the following properties to track the version of {OpenLiberty} and the {OpenLiberty} Maven Plugin you are using:
++
+--
+[source,xml,subs="attributes+",options="nowrap"]
+----
+<project>
+  ...
+  <properties>
+    <version.openliberty>19.0.0.9</version.openliberty>
+    <version.openliberty.maven.plugin>3.0.1</version.openliberty.maven.plugin>   
+  </properties>
+  ...
+</project>
+----
+--
+
+. Specify the repositories containing {ProductShortName} {OpenLiberty} Starters and the {OpenLiberty} Maven Plugin:
++
+--
+[source,xml,subs="attributes+",options="nowrap"]
+----
+  <!-- Specify the repositories containing RHOAR artifacts. -->
+  <repositories>
+    <repository>
+      <id>redhat-ga</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+    </repository>
+  </repositories>
+
+  <!-- Specify the repositories containing the plugins used to execute the build of your application. -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>redhat-ga</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+    </pluginRepository>
+  </pluginRepositories>
+----
+--
+
+. Reference `open-liberty-maven-plugin` as the plugin used to package your application:
++
+--
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project>
+  ...
+  <build>
+    <plugins>
+        ...
+                <!-- Enable liberty-maven plugin -->
+            <plugin>
+                <groupId>io.openliberty.tools</groupId>
+                <artifactId>liberty-maven-plugin</artifactId>
+                <version>${version.openliberty.maven.plugin}</version>
+
+                <configuration>
+                    <assemblyArtifact>
+                        <groupId>io.openliberty</groupId>
+                        <artifactId>openliberty-runtime</artifactId>
+                        <version>[18.0.0.1,)</version>
+                        <type>zip</type>
+                    </assemblyArtifact>
+                    <bootstrapProperties>
+                        <default.http.port>${http.port}</default.http.port>
+                        <default.https.port>${https.port}</default.https.port>
+                        <app.context.root>/</app.context.root>
+                    </bootstrapProperties>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>create</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>create</goal>
+                            <goal>configure-arquillian</goal>  
+                            <goal>deploy</goal>                          
+                        </goals>
+                        <configuration>
+                                <looseApplication>true</looseApplication>
+                                <stripVersion>true</stripVersion>
+                                <installAppPackages>project</installAppPackages>
+                            </configuration>
+                    </execution>
+                   
+                    <execution>
+                        <id>package</id>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>rest-http-openliberty</packageName>
+                            <packageType>jar</packageType>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        ...
+    </plugins>
+  </build>
+  ...
+</project>
+----
+--
+
+.Additional resources
+
+* For more information about packaging your {OpenLiberty} application, see the link:https://github.com/OpenLiberty/ci.maven[Open Liberty Maven Plugin] documentation.

@@ -40,6 +40,7 @@ endif::[]
 :DevStudio: Red Hat CodeReady Studio
 // common name for Spring Reactive components
 :SpringReactive: Spring Boot with Vert.X
+:OpenLiberty: Open Liberty
 
 
 // Names
@@ -66,6 +67,7 @@ endif::[]
 :name-guide-vertx: {VertX} Runtime Guide
 :name-guide-thorntail: {WildFlySwarm} Runtime Guide
 :name-guide-nodejs: {Node} Runtime Guide
+:name-guide-openliberty: {OpenLiberty} Runtime Guide
 
 :name-repo-docs: launcher-documentation
 
@@ -100,36 +102,43 @@ endif::[]
 :link-example-cache-spring-boot: {link-guide-spring-boot}#example-cache-spring-boot
 :link-example-cache-thorntail: {link-guide-thorntail}#example-cache-wf-swarm
 :link-example-cache-vertx: {link-guide-vertx}#example-cache-vertx
+:link-example-cache-openliberty: {link-guide-openliberty}#example-cache-openliberty
 
 :link-example-circuit-breaker-nodejs: {link-guide-nodejs}#example-circuit-breaker-nodejs
 :link-example-circuit-breaker-spring-boot: {link-guide-spring-boot}#example-circuit-breaker-spring-boot
 :link-example-circuit-breaker-thorntail: {link-guide-thorntail}#example-circuit-breaker-wf-swarm
 :link-example-circuit-breaker-vertx: {link-guide-vertx}#example-circuit-breaker-vertx
+:link-example-circuit-breaker-openliberty: {link-guide-openliberty}#example-circuit-breaker-openliberty
 
 :link-example-configmap-nodejs: {link-guide-nodejs}#example-configmap-nodejs
 :link-example-configmap-spring-boot: {link-guide-spring-boot}#example-configmap-spring-boot
 :link-example-configmap-thorntail: {link-guide-thorntail}#example-configmap-wf-swarm
 :link-example-configmap-vertx: {link-guide-vertx}#example-configmap-vertx
+:link-example-configmap-openliberty: {link-guide-openliberty}#example-configmap-openliberty
 
 :link-example-crud-nodejs: {link-guide-nodejs}#example-crud-nodejs
 :link-example-crud-spring-boot: {link-guide-spring-boot}#example-crud-spring-boot
 :link-example-crud-thorntail: {link-guide-thorntail}#example-crud-wf-swarm
 :link-example-crud-vertx: {link-guide-vertx}#example-crud-vertx
+:link-example-crud-openliberty: {link-guide-openliberty}#example-crud-openliberty
 
 :link-example-health-check-nodejs: {link-guide-nodejs}#example-health-check-nodejs
 :link-example-health-check-spring-boot: {link-guide-spring-boot}#example-health-check-spring-boot
 :link-example-health-check-thorntail: {link-guide-thorntail}#example-health-check-wf-swarm
 :link-example-health-check-vertx: {link-guide-vertx}#example-health-check-vertx
+:link-example-health-check-openliberty: {link-guide-openliberty}#example-health-check-openliberty
 
 :link-example-http-api-nodejs: {link-guide-nodejs}#example-rest-http-nodejs
 :link-example-http-api-spring-boot: {link-guide-spring-boot}#example-rest-http-spring-boot
 :link-example-http-api-thorntail: {link-guide-thorntail}#example-rest-http-wf-swarm
 :link-example-http-api-vertx: {link-guide-vertx}#example-rest-http-vertx
+:link-example-http-api-openliberty: {link-guide-openliberty}#example-rest-http-openliberty
 
 :link-example-secured-nodejs: {link-guide-nodejs}#example-rest-http-secured-nodejs
 :link-example-secured-spring-boot: {link-guide-spring-boot}#example-rest-http-secured-spring-boot
 :link-example-secured-thorntail: {link-guide-thorntail}#example-rest-http-secured-wf-swarm
 :link-example-secured-vertx: {link-guide-vertx}#example-rest-http-secured-vertx
+:link-example-secured-openliberty: {link-guide-openliberty}#example-rest-http-secured-openliberty
 
 :link-repo-docs: https://github.com/fabric8-launcher/launcher-documentation
 :link-repo-wildfly-swarm: https://github.com/thorntail/thorntail/
