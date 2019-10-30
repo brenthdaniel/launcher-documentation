@@ -27,3 +27,7 @@ See link:{link-guide-spring-boot-1-5}[{name-guide-spring-boot-1-5}] for informat
 {Node}:: An asynchronous event-driven JavaScript runtime designed to build scalable network applications.
 +
 See link:{link-guide-nodejs}[{name-guide-nodejs}] for information about {Node} application development.
+
+{OpenLiberty}:: A lightweight open framework for building fast and efficient cloud-native Java microservices. 
++
+See link:{link-guid-openliberty}[{name-guide-openliberty}] for information about {OpenLiberty} application development.

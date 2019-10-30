@@ -42,6 +42,11 @@ include::topics/templates/document-attributes.adoc[]
   background-image:url(/docs/images/project-select-icons/nodejs-logo.png);
   background-size:60%
 }
+.openliberty {
+  background-image:url(/docs/images/project-select-icons/ol.svg);
+  background-size:40%
+}
+
 #runtimes {
   flex: 1;
   background-color: #f5f5f5;
@@ -121,6 +126,16 @@ include::topics/templates/document-attributes.adoc[]
             Learn how to use Node.js®.
         </p>
         <a href="/docs/nodejs-runtime.html" class="btn btn-default" role="button">
+          Learn more
+        </a>
+      </div>
+
+      <div class="col-sm-3 runtime">
+        <div class="fa icon openliberty"></div>
+        <p >
+          Learn how to use Open Liberty.
+        </p>
+        <a href="/docs/openliberty-runtime.html" class="btn btn-default" role="button">
           Learn more
         </a>
       </div>
